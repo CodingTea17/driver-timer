@@ -34,7 +34,7 @@ class driver{
 }
 
     // Initializes the driver 'objects'
-    $vova = new driver("Vova Syakov", ***REMOVED***);
+    $vova = new driver("Vova", ***REMOVED***);
     $dawson = new driver("Dawson", ***REMOVED***);
     $kayti = new driver("Kayti", ***REMOVED***);
     $cienna = new driver("Cienna", ***REMOVED***);

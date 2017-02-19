@@ -38,7 +38,7 @@
             if($sender == $dawson->get_number()){
                 $dawsons_messages[] = ((($driver_response*60) + $message_time)*1000);
             }
-            if($sender == $kayti->get_number()){
+            if($sender == $cienna->get_number()){
                 $kaytis_messages[] = ((($driver_response*60) + $message_time)*1000);
             }
             if($sender == $vova->get_number()){
@@ -77,7 +77,7 @@
         <div class="row">
             <div class="col s4  z-depth-1 grey darken-1">
                 <div class="container">
-                    <h2 style="text-align:center" class="white-text"><?php echo $vova->get_name();?></h2>
+                    <h4 style="text-align:center" class="white-text"><?php echo $vova->get_name();?></h4>
                     <div class="card-panel grey lighten-3">
                         <h4 style="text-align:center">Countdown:</h4>
                         <h1 style="text-align:center"><div data-countdown="<?php echo current($vovas_messages); ?>"></div></h1>
@@ -86,7 +86,7 @@
             </div>
             <div class="col s4  z-depth-1 grey darken-1">
                 <div class="container">
-                    <h2 style="text-align:center" class="white-text"><?php echo $dawson->get_name();?></h2>
+                    <h4 style="text-align:center" class="white-text"><?php echo $dawson->get_name();?></h4>
                     <div class="card-panel grey lighten-3">
                         <h4 style="text-align:center">Countdown: </h4>
                         <h1 style="text-align:center"><div data-countdown="<?php echo current($dawsons_messages); ?>"></div></h1>
@@ -95,7 +95,7 @@
             </div>
             <div class="col s4  z-depth-1 grey darken-1">
                 <div class="container">
-                    <h2 style="text-align:center" class="white-text"><?php echo $kayti->get_name();?></h2>
+                    <h4 style="text-align:center" class="white-text"><?php echo $cienna->get_name();?></h4>
                     <div class="card-panel grey lighten-3">
                         <h4 style="text-align:center">Countdown:</h4>
                         <h1 style="text-align:center"><div data-countdown="<?php echo current($kaytis_messages); ?>"></div></h1>
