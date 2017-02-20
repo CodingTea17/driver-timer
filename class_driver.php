@@ -6,6 +6,7 @@ class driver{
     var $is_driver_back;
     var $return_time;
     var $messages = array();
+    var $message_time = array();
     
     function __construct($name, $phone_number) {		
 			$this->driver_name = $name;
@@ -36,7 +37,12 @@ class driver{
     function get_newest_message(){
         return current($this->messages);
     }
-    
+    function add_message_time($mt){
+        $this->message_time[] = $mt;
+    }
+    function get_newest_message_time(){
+        return current($this->message_time);
+    }
 }
 
     // Initializes the driver 'objects'

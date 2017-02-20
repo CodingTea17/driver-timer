@@ -25,26 +25,35 @@
 <?php
     // Sets variables for later use
     $message_time;
-    $most_recent_message_time  = $t;
+    $most_recent_message_time;
     $most_recent_message_sid;
     $message_time_difference;
+    $counter = 0;
     
         foreach ($client->messages->read() as $message) {
+            $counter += 1;
             $message_time = $message->dateSent->getTimestamp();
             $driver_response = $message->body;
             $sender = $message->from;
             
             if($sender == $dawson->get_number()){
                 $dawson->add_message((($driver_response*60) + $message_time)*1000);
+                $dawson->add_message_time($message_time);
             }
             if($sender == $cienna->get_number()){
                 $cienna->add_message((($driver_response*60) + $message_time)*1000);
+                $cienna->add_message_time($message_time);
             }
             if($sender == $vova->get_number()){
                 $vova->add_message((($driver_response*60) + $message_time)*1000);
+                $vova->add_message_time($message_time);
             }
             if($sender == $kayti->get_number()){
                 $kayti->add_message((($driver_response*60) + $message_time)*1000);
+            }
+            
+            if($counter == 1){
+                $most_recent_message_time = $message_time;
             }
         }
 ?>
@@ -143,13 +152,17 @@
 </head>
 
 <script type="text/javascript">
+    var has_dung = false;
   $('[data-countdown]').each(function() {
+    var now = new Date();
     var $this = $(this), finalDate = new Date($(this).data('countdown'));
+    var $message_time = (<?php echo $most_recent_message_time; ?> + " ");
+    document.write((Number($message_time) + 10) + " " + (now.getTime()/1000) + " ");
     $this.countdown(finalDate, function(event) {
         $this.html(event.strftime('%M:%S'));
-        var now = new Date();
-        if((event.finalDate >= now.setSeconds(now.getSeconds() - 5)) && (event.finalDate <= now.setSeconds(now.getSeconds() + 5))){
+        if(((now.getTime()/1000) <= (Number($message_time) + 14)) && (has_dung == false)){
             document.getElementById( 'timer-beep' ).play();
+            has_dung = true;
         }
   });
 });
