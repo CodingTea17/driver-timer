@@ -160,7 +160,7 @@
     //document.write((Number($message_time) + 10) + " " + (now.getTime()/1000) + " ");
     $this.countdown(finalDate, function(event) {
         $this.html(event.strftime('%M:%S'));
-        if(((now.getTime()/1000) <= (Number($message_time) + 14)) && (has_dung == false)){
+        if(((now.getTime()/1000) <= (Number($message_time) + 18)) && (has_dung == false)){
             document.getElementById( 'timer-beep' ).play();
             has_dung = true;
         }
