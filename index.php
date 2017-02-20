@@ -157,7 +157,7 @@
     var now = new Date();
     var $this = $(this), finalDate = new Date($(this).data('countdown'));
     var $message_time = (<?php echo $most_recent_message_time; ?> + " ");
-    document.write((Number($message_time) + 10) + " " + (now.getTime()/1000) + " ");
+    //document.write((Number($message_time) + 10) + " " + (now.getTime()/1000) + " ");
     $this.countdown(finalDate, function(event) {
         $this.html(event.strftime('%M:%S'));
         if(((now.getTime()/1000) <= (Number($message_time) + 14)) && (has_dung == false)){
