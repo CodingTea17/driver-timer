@@ -28,7 +28,6 @@
     $most_recent_message_time  = $t;
     $most_recent_message_sid;
     $message_time_difference;
-    $dawsons_messages = array(); 
     
         foreach ($client->messages->read() as $message) {
             $message_time = $message->dateSent->getTimestamp();
@@ -39,10 +38,13 @@
                 $dawson->add_message((($driver_response*60) + $message_time)*1000);
             }
             if($sender == $cienna->get_number()){
-                $kaytis_messages[] = ((($driver_response*60) + $message_time)*1000);
+                $cienna->add_message((($driver_response*60) + $message_time)*1000);
             }
             if($sender == $vova->get_number()){
-                $vovas_messages[] = ((($driver_response*60) + $message_time)*1000);
+                $vova->add_message((($driver_response*60) + $message_time)*1000);
+            }
+            if($sender == $kayti->get_number()){
+                $kayti->add_message((($driver_response*60) + $message_time)*1000);
             }
         }
 ?>
@@ -80,7 +82,7 @@
                 <div class="container">
                     <div class="card-panel grey lighten-3">
                         <h5 style="text-align:center"> Countdown:</h5>
-                        <h1 style="text-align:center"><div data-countdown="<?php echo current($vovas_messages); ?>"></div></h1>
+                        <h1 style="text-align:center"><div data-countdown="<?php echo $vova->get_newest_message()?>"></div></h1>
                     </div>
                 </div>
             </div>
@@ -89,7 +91,7 @@
                 <div class="container">
                     <div class="card-panel grey lighten-3">
                         <h5 style="text-align:center">Countdown: </h5>
-                        <h1 style="text-align:center"><div data-countdown="<?php echo $dawson->get_newest_message(); ?>"></div></h1>
+                        <h1 style="text-align:center"><div data-countdown="<?php echo $dawson->get_newest_message();?>"></div></h1>
                     </div>
                 </div>
             </div>
@@ -98,7 +100,7 @@
                     <h4 style="text-align:center" class="white-text"><?php echo $cienna->get_name();?></h4>
                     <div class="card-panel grey lighten-3">
                         <h5 style="text-align:center">Countdown:</h5>
-                        <h1 style="text-align:center"><div data-countdown="<?php echo current($kaytis_messages); ?>"></div></h1>
+                        <h1 style="text-align:center"><div data-countdown="<?php echo $cienna->get_newest_message();?>"></div></h1>
                     </div>
                 </div>
             </div>
@@ -114,11 +116,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col s4  z-depth-1 grey darken-1 valign-wrapper">
+            <div class="col s4  z-depth-1 grey darken-1">
+                <h4 style="text-align:center" class="white-text"><?php echo $kayti->get_name();?></h4>
                 <div class="container">
-                    <h3 style="text-align:center"><?php // Place to include another driver?></h3 style="text-align:center">
                     <div class="card-panel grey lighten-3">
-                        <img class="center-block" src="Pizza-Guys-Footer-Logo.png"></img>
+                        <h5 style="text-align:center">Countdown: </h5>
+                        <h1 style="text-align:center"><div data-countdown="<?php echo $kayti->get_newest_message();?>"></div></h1>
                     </div>
                 </div>
             </div>
@@ -140,9 +143,6 @@
 </head>
 
 <script type="text/javascript">
-    var dc1 = false;
-    var dc2 = false;
-    var dc3 = false;
   $('[data-countdown]').each(function() {
     var $this = $(this), finalDate = new Date($(this).data('countdown'));
     $this.countdown(finalDate, function(event) {
