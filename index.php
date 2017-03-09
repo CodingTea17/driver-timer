@@ -49,10 +49,12 @@
                 $vova->add_message_time($message_time);
             }
             if($sender == $kat->get_number()){
-                $kayti->add_message((($driver_response*60) + $message_time)*1000);
+                $kat->add_message((($driver_response*60) + $message_time)*1000);
+                $kat->add_message_time($message_time);
             }
             if($sender == $donovan->get_number()){
-                $kayti->add_message((($driver_response*60) + $message_time)*1000);
+                $donovan->add_message((($driver_response*60) + $message_time)*1000);
+                $donovan->add_message_time($message_time);
             }
             
             if($counter == 1){
@@ -125,7 +127,7 @@
                 <div class="container">
                     <div class="card-panel grey lighten-3">
                         <h5 style="text-align:center"> Countdown:</h5>
-                        <h1 style="text-align:center">I need yo number</h1>
+                        <h1 style="text-align:center"><div data-countdown="<?php echo $kat->get_newest_message()?>"></div></h1>
                     </div>
                 </div>
             </div>
@@ -142,7 +144,7 @@
                     <h4 style="text-align:center" class="white-text"><?php echo $donovan->get_name();?></h4>
                     <div class="card-panel grey lighten-3">
                         <h5 style="text-align:center">Countdown:</h5>
-                        <h1 style="text-align:center">I need yo # too</h1>
+                        <h1 style="text-align:center"><div data-countdown="<?php echo $donovan->get_newest_message()?>"></div></h1>
                     </div>
                 </div>
             </div>
