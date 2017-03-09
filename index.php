@@ -48,7 +48,10 @@
                 $vova->add_message((($driver_response*60) + $message_time)*1000);
                 $vova->add_message_time($message_time);
             }
-            if($sender == $kayti->get_number()){
+            if($sender == $kat->get_number()){
+                $kayti->add_message((($driver_response*60) + $message_time)*1000);
+            }
+            if($sender == $donovan->get_number()){
                 $kayti->add_message((($driver_response*60) + $message_time)*1000);
             }
             
@@ -117,6 +120,15 @@
         
         <!-- SECOND ROW -->
         <div class="row">
+            <div class="col s4  z-depth-1 grey darken-1">
+                <h4 style="text-align:center" class="white-text"><?php echo $kat->get_name();?></h4>
+                <div class="container">
+                    <div class="card-panel grey lighten-3">
+                        <h5 style="text-align:center"> Countdown:</h5>
+                        <h1 style="text-align:center">I need yo number</h1>
+                    </div>
+                </div>
+            </div>
             <div class="col s4  z-depth-1 grey darken-1 valign-wrapper">
                 <div class="container">
                     <h3 style="text-align:center" class="grey-text text-lighten-5"><?php // Place to include another driver?></h3 style="text-align:center">
@@ -126,19 +138,11 @@
                 </div>
             </div>
             <div class="col s4  z-depth-1 grey darken-1">
-                <h4 style="text-align:center" class="white-text"><?php echo $kayti->get_name();?></h4>
                 <div class="container">
+                    <h4 style="text-align:center" class="white-text"><?php echo $donovan->get_name();?></h4>
                     <div class="card-panel grey lighten-3">
-                        <h5 style="text-align:center">Countdown: </h5>
-                        <h1 style="text-align:center"><div data-countdown="<?php echo $kayti->get_newest_message();?>"></div></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col s4  z-depth-1 grey darken-1 valign-wrapper">
-                <div class="container">
-                    <h3 style="text-align:center"><?php // Place to include another driver?></h3 style="text-align:center">
-                    <div class="card-panel grey lighten-3 valign">
-                        <img class="center-block" src="Pizza-Guys-Footer-Logo.png"></img>
+                        <h5 style="text-align:center">Countdown:</h5>
+                        <h1 style="text-align:center">I need yo # too</h1>
                     </div>
                 </div>
             </div>
@@ -167,3 +171,13 @@
   });
 });
 </script>
+
+<!--           <div class="col s4  z-depth-1 grey darken-1 valign-wrapper">
+                <div class="container">
+                    <h3 style="text-align:center" class="grey-text text-lighten-5"><?php // Place to include another driver?></h3 style="text-align:center">
+                    <div class="card-panel grey lighten-3">
+                        <img class="center-block" src="Pizza-Guys-Footer-Logo.png"></img>
+                    </div>
+                </div>
+            </div>
+            -->

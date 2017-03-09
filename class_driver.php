@@ -48,7 +48,11 @@ class driver{
     // Initializes the driver 'objects'
     $vova = new driver("Vova", ***REMOVED***);
     $dawson = new driver("Dawson", ***REMOVED***);
-    $kayti = new driver("Kayti", ***REMOVED***);
     $cienna = new driver("Cienna", ***REMOVED***);
+    $donovan = new driver("Donovan", +9999999999);
+    $kat = new driver("Kat", +9999999999);
+    
+    //OLD DRIVERS
+    //$kayti = new driver("Kayti", ***REMOVED***);
 
 ?>
