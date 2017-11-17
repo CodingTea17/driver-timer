@@ -1,8 +1,7 @@
 # The Original Driver Timer (Frankenstein)
---------
 
 ## Concept
---------
+
 The idea was to create a simple application to increase delivery efficiency. Drivers were required to call back after every delivery so that shift leads could route the upcoming deliveries and 'insiders' could prepare those orders to be ready as soon as the driver returned. Ideally a driver would return from a delivery and immediately leave on the next. However, that was almost never the case. During rush periods shift leads were unable to mentally keep track of who was returning and phone calls to the store was often not even reported to the shift lead. Drivers would return and the next delivery would not have even been 'slapped out', delaying the order by 15+ minutes.
 
 #### Goals of the Driver Timer:
