@@ -9,8 +9,8 @@
     use Twilio\Rest\Client;
 
     // Your Account SID and Auth Token from twilio.com/console
-    $sid = '***REMOVED***';
-    $token = '***REMOVED***';
+    $sid = getenv('SID');
+    $token = getenv('TOKEN');
     $client = new Client($sid, $token);
     
     // Sets variables for later use

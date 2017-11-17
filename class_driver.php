@@ -46,13 +46,10 @@ class driver{
 }
 
     // Initializes the driver 'objects'
-    $vova = new driver("Vova", ***REMOVED***);
-    $dawson = new driver("Dawson", ***REMOVED***);
-    $cienna = new driver("Cienna", ***REMOVED***);
-    $donovan = new driver("Donovan", ***REMOVED***);
-    $kat = new driver("Kat", ***REMOVED***);
-    
-    //OLD DRIVERS
-    //$kayti = new driver("Kayti", ***REMOVED***);
+    $vova = new driver("Vova", getenv(V_PHONE));
+    $dawson = new driver("Dawson", getenv(DA_PHONE));
+    $cienna = new driver("Cienna", getenv(C_PHONE));
+    $donovan = new driver("Donovan", getenv(DO_PHONE));
+    $kat = new driver("Kat", getenv(K_PHONE));
 
 ?>

@@ -1,30 +1,26 @@
+# The Original Driver Timer (Frankenstein)
+--------
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+## Concept
+--------
+The idea was to create a simple application to increase delivery efficiency. Drivers were required to call back after every delivery so that shift leads could route the upcoming deliveries and 'insiders' could prepare those orders to be ready as soon as the driver returned. Ideally a driver would return from a delivery and immediately leave on the next. However, that was almost never the case. During rush periods shift leads were unable to mentally keep track of who was returning and phone calls to the store was often not even reported to the shift lead. Drivers would return and the next delivery would not have even been 'slapped out', delaying the order by 15+ minutes.
 
+#### Goals of the Driver Timer:
 
-Hi there! Welcome to Cloud9 IDE!
+* Provide accurate, consistent communication between the drivers and shift lead
+* Reduce distractions for driver (e.g. making a phone call while driving back to the store)
+* Improve delivery overall times by cutting down out-the-door times
 
-To get you started, we have created a small hello world application.
+#### Tech
 
-1) Open the hello-world.php file
+In order to accomplish these goals I created a single page application that recieved text messages through the Twilio API and displayed a countdown for when a given driver would return. The driver would send a number (e.g. 10) and a countdown would begin followed by an audible beeping sound to notify those around the tablet that a driver was returning.
+#### Results
 
-2) Follow the run instructions in the file's comments
+It worked amazingly. I no longer had to juggle my phone while trying to shift through gears on my little Geo Metro, the shift leaders now knew which drivers would be returning and an approximation of when, and drivers no longer had to wait 15+ minutes for their next delivery. 
 
-3) If you want to look at the Apache logs, check out ~/lib/apache2/log
+#### Looking Forward
 
-And that's all there is to it! Just have fun. Go ahead and edit the code, 
-or add new files. It's all up to you! 
+While it works, the code is my frankenstein monster. This is my first web application and I know it needs a lot of work. For example, I had to hard code the drivers which isn't terrible because we don't get new drivers every day. There's also a lot of poorly written test code that was written with good intentions. A future feature to add to the application would be the ability to add multiple stores.
 
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+EDIT: This version became depreciated when my free trial from Twilio abruptly ended... It would've costed ~$5 per month to keep using Twilio and I didn't want to do that so I looked for other solutions. Cue V2 (feat. Nexmo).
+TODO: Get a screenshot of the application (app doesn't want to run without Twilio auth which was revoked when the trial ended)

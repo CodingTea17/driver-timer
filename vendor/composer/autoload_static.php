@@ -11,12 +11,20 @@ class ComposerStaticInite4ebec0a90b6ba88b461b7cc22ae7449
         array (
             'Twilio\\' => 7,
         ),
+        'D' => 
+        array (
+            'Dotenv\\' => 7,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Twilio\\' => 
         array (
             0 => __DIR__ . '/..' . '/twilio/sdk/Twilio',
+        ),
+        'Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
     );
 

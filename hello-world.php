@@ -6,8 +6,8 @@ require __DIR__ . '/vendor/autoload.php';
 use Twilio\Rest\Client;
 
 // Your Account SID and Auth Token from twilio.com/console
-$sid = '***REMOVED***';
-$token = '***REMOVED***';
+    $sid = getenv('SID');
+    $token = getenv('TOKEN');
 $client = new Client($sid, $token);
 
 
@@ -16,7 +16,7 @@ $client = new Client($sid, $token);
 // Use the client to do fun stuff like send text messages!
 $client->messages->create(
     // the number you'd like to send the message to
-    '***REMOVED***',
+    '+55555555',
     array(
         // A Twilio phone number you purchased at twilio.com/console
         'from' => '+15034058703',

@@ -12,13 +12,18 @@
     
     // Required if your environment does not handle autoloading
     require __DIR__ . '/vendor/autoload.php';
+    
+
 
     // Use the REST API Client to make requests to the Twilio REST API
     use Twilio\Rest\Client;
-
+    
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();
+    
     // Your Account SID and Auth Token from twilio.com/console
-    $sid = '***REMOVED***';
-    $token = '***REMOVED***';
+    $sid = getenv('SID');
+    $token = getenv('TOKEN');
     $client = new Client($sid, $token);
 ?>
 
