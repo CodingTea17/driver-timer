@@ -22,4 +22,10 @@ It worked amazingly. I no longer had to juggle my phone while trying to shift th
 While it works, the code is my frankenstein monster. This is my first web application and I know it needs a lot of work. For example, I had to hard code the drivers which isn't terrible because we don't get new drivers every day. There's also a lot of poorly written test code that was written with good intentions. A future feature to add to the application would be the ability to add multiple stores.
 
 EDIT: This version became depreciated when my free trial from Twilio abruptly ended... It would've costed ~$5 per month to keep using Twilio and I didn't want to do that so I looked for other solutions. Cue V2 (feat. Nexmo).
-TODO: Get a screenshot of the application (app doesn't want to run without Twilio auth which was revoked when the trial ended)
+
+~~TODO: Get a screenshot of the application (app doesn't want to run without Twilio auth which was revoked when the trial ended)~~
+
+EDIT2: I was able to render the HTML as is to produce a screenshot and edit it to reflect more what the application looked like.
+
+#### Screenshot
+![My Driver Timer](./the_app.png "The original Driver Timer")
